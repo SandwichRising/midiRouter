@@ -66,7 +66,7 @@ MIDIDevice * midilist[10] = {
 };
 
 int USBrcvd = -1; //track which USB port recevied a message so as not to resend it back out to same port
-
+int DINrcvd = -1; //track which DIN port recevied a message so as not to resend it back out to same port
 
 
 void setup() {
@@ -108,16 +108,19 @@ void loop() {
   bool clockActivity = false;
   bool midiActivity = false;
   USBrcvd = -1;
+  DINrcvd = -1;
   
   if (MIDI1.read()) {
+    DINrcvd = 1;
     byte commandType = MIDI1.getType();
-    //suppress receiving midi clock over DIN
+    //this port can receive midi clock
     sendMIDI(commandType, MIDI1.getChannel(), MIDI1.getData1(), MIDI1.getData2(), MIDI1.getSysExArray());
     if (commandType == 0xF8) clockActivity = true;
     else midiActivity = true;
   }
 
   if (MIDI2.read()) {
+    DINrcvd = 2;
     byte commandType = MIDI2.getType();
     //suppress receiving midi clock over DIN
     if (commandType != 0xF8) {
@@ -127,6 +130,7 @@ void loop() {
   }
 
   if (MIDI3.read()) {
+    DINrcvd = 3;
     byte commandType = MIDI3.getType();
     //suppress receiving midi clock over DIN
     if (commandType != 0xF8) {
@@ -136,6 +140,7 @@ void loop() {
   }
 
   if (MIDI4.read()) {
+    DINrcvd = 4;
     byte commandType = MIDI4.getType();
     //suppress receiving midi clock over DIN
     if (commandType != 0xF8) {
@@ -145,6 +150,7 @@ void loop() {
   }
 
   if (MIDI5.read()) {
+    DINrcvd = 5;
     byte commandType = MIDI5.getType();
     //suppress receiving midi clock over DIN
     if (commandType != 0xF8) {
@@ -260,13 +266,14 @@ void sendMIDI(byte type, byte channel, byte data1, byte data2, const uint8_t *sy
     midi::MidiType mtype = (midi::MidiType)type;
     
     // Normal messages, simply give the data to the usbMIDI.send()
-    MIDI1.send(mtype, data1, data2, channel);
-    MIDI2.send(mtype, data1, data2, channel);
-    MIDI3.send(mtype, data1, data2, channel);
-    MIDI4.send(mtype, data1, data2, channel);
-    MIDI5.send(mtype, data1, data2, channel);
-    MIDI6.send(mtype, data1, data2, channel);
-    MIDI7.send(mtype, data1, data2, channel);
+    // suppress whatever channel message came in on, outgoing is automatically broadcast on same channel
+    if (DINrcvd != 1) MIDI1.send(mtype, data1, data2, channel);
+    if (DINrcvd != 2) MIDI2.send(mtype, data1, data2, channel);
+    if (DINrcvd != 3) MIDI3.send(mtype, data1, data2, channel);
+    if (DINrcvd != 4) MIDI4.send(mtype, data1, data2, channel);
+    if (DINrcvd != 5 )MIDI5.send(mtype, data1, data2, channel);
+    if (DINrcvd != 6) MIDI6.send(mtype, data1, data2, channel);
+    if (DINrcvd != 7) MIDI7.send(mtype, data1, data2, channel);
     
     if (USBrcvd != 0) usbMIDI.send(type, data1, data2, channel, 0);
     
