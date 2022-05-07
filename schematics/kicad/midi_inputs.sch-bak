@@ -1,0 +1,754 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 3
+Title "midiRouter Schematics"
+Date "2022-05-06"
+Rev "0"
+Comp "by FeverDreamEmulator (MIT Open Source Design)"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R_US R?
+U 1 1 6285F7D2
+P 2350 3350
+AR Path="/6285F7D2" Ref="R?"  Part="1" 
+AR Path="/62836321/6285F7D2" Ref="R?"  Part="1" 
+F 0 "R?" V 2250 3350 50  0000 C CNN
+F 1 "220" V 2450 3350 50  0000 C CNN
+F 2 "" V 2390 3340 50  0001 C CNN
+F 3 "~" H 2350 3350 50  0001 C CNN
+	1    2350 3350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Isolator:6N138 U?
+U 1 1 6285F7D8
+P 2825 3450
+AR Path="/6285F7D8" Ref="U?"  Part="1" 
+AR Path="/62836321/6285F7D8" Ref="U?"  Part="1" 
+F 0 "U?" H 2825 2983 50  0000 C CNN
+F 1 "6N138" H 2825 3074 50  0000 C CNN
+F 2 "" H 3115 3150 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/HCPL2731-D.pdf" H 3115 3150 50  0001 C CNN
+	1    2825 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N914 D?
+U 1 1 6285F7DE
+P 2075 3400
+AR Path="/6285F7DE" Ref="D?"  Part="1" 
+AR Path="/62836321/6285F7DE" Ref="D?"  Part="1" 
+F 0 "D?" V 2375 3450 50  0000 R CNN
+F 1 "1N914" V 2300 3525 50  0000 R CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 2075 3225 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/85622/1n914.pdf" H 2075 3400 50  0001 C CNN
+	1    2075 3400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2500 3350 2525 3350
+$Comp
+L Device:R_US R?
+U 1 1 6285F7E6
+P 3275 3350
+AR Path="/6285F7E6" Ref="R?"  Part="1" 
+AR Path="/62836321/6285F7E6" Ref="R?"  Part="1" 
+F 0 "R?" V 3175 3350 50  0000 C CNN
+F 1 "4.7k" V 3375 3350 50  0000 C CNN
+F 2 "" V 3315 3340 50  0001 C CNN
+F 3 "~" H 3275 3350 50  0001 C CNN
+	1    3275 3350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6285F7EC
+P 3425 3350
+AR Path="/6285F7EC" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/6285F7EC" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3425 3100 50  0001 C CNN
+F 1 "GND" V 3430 3222 50  0000 R CNN
+F 2 "" H 3425 3350 50  0001 C CNN
+F 3 "" H 3425 3350 50  0001 C CNN
+	1    3425 3350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6285F7F2
+P 3125 3650
+AR Path="/6285F7F2" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/6285F7F2" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3125 3400 50  0001 C CNN
+F 1 "GND" V 3130 3522 50  0000 R CNN
+F 2 "" H 3125 3650 50  0001 C CNN
+F 3 "" H 3125 3650 50  0001 C CNN
+	1    3125 3650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3125 3250 3125 3050
+Wire Wire Line
+	3125 3550 3750 3550
+$Comp
+L Device:R_US R?
+U 1 1 6285F7FB
+P 3750 3700
+AR Path="/6285F7FB" Ref="R?"  Part="1" 
+AR Path="/62836321/6285F7FB" Ref="R?"  Part="1" 
+F 0 "R?" H 3650 3750 50  0000 C CNN
+F 1 "440" H 3625 3650 50  0000 C CNN
+F 2 "" V 3790 3690 50  0001 C CNN
+F 3 "~" H 3750 3700 50  0001 C CNN
+	1    3750 3700
+	-1   0    0    1   
+$EndComp
+Connection ~ 3750 3550
+Wire Wire Line
+	3750 3550 3975 3550
+Wire Wire Line
+	3725 3850 3750 3850
+$Comp
+L Connector:AudioJack3_Ground_SwitchTR J?
+U 1 1 6285F805
+P 1300 3350
+AR Path="/6285F805" Ref="J?"  Part="1" 
+AR Path="/62836321/6285F805" Ref="J14"  Part="1" 
+F 0 "J14" H 900 2675 50  0000 C CNN
+F 1 "TRS_MIDI_TYPE_A" H 1300 2675 50  0000 C CNN
+F 2 "" H 1300 3350 50  0001 C CNN
+F 3 "~" H 1300 3350 50  0001 C CNN
+	1    1300 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6285F80B
+P 1500 3250
+AR Path="/6285F80B" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/6285F80B" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1500 3000 50  0001 C CNN
+F 1 "GND" V 1600 3325 50  0000 R CNN
+F 2 "" H 1500 3250 50  0001 C CNN
+F 3 "" H 1500 3250 50  0001 C CNN
+	1    1500 3250
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 1300 3850
+$Comp
+L Connector:DIN-5_180degree J?
+U 1 1 6285F812
+P 1250 2775
+AR Path="/6285F812" Ref="J?"  Part="1" 
+AR Path="/62836321/6285F812" Ref="J2"  Part="1" 
+F 0 "J2" H 950 2675 50  0000 C CNN
+F 1 "DIN-5_180" H 875 2600 50  0000 C CNN
+F 2 "" H 1250 2775 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 1250 2775 50  0001 C CNN
+	1    1250 2775
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1500 3650 1625 3650
+Wire Wire Line
+	1625 3650 1625 3925
+Wire Wire Line
+	1625 3925 825  3925
+Wire Wire Line
+	825  3925 825  2875
+Wire Wire Line
+	825  2875 950  2875
+Wire Wire Line
+	1500 3450 1800 3450
+Wire Wire Line
+	1800 3450 1800 2875
+Wire Wire Line
+	1800 2875 1550 2875
+NoConn ~ 950  2775
+NoConn ~ 1250 3075
+NoConn ~ 1550 2775
+Wire Wire Line
+	1500 3550 2075 3550
+Connection ~ 2075 3550
+Wire Wire Line
+	2075 3550 2525 3550
+Wire Wire Line
+	2200 3350 2175 3350
+Wire Wire Line
+	2175 3350 2175 3250
+Wire Wire Line
+	2175 3250 2075 3250
+Wire Wire Line
+	1975 3250 1975 3350
+Wire Wire Line
+	1975 3350 1500 3350
+Connection ~ 2075 3250
+Wire Wire Line
+	2075 3250 1975 3250
+$Comp
+L Device:R_US R?
+U 1 1 628659DE
+P 2400 5275
+AR Path="/628659DE" Ref="R?"  Part="1" 
+AR Path="/62836321/628659DE" Ref="R?"  Part="1" 
+F 0 "R?" V 2300 5275 50  0000 C CNN
+F 1 "220" V 2500 5275 50  0000 C CNN
+F 2 "" V 2440 5265 50  0001 C CNN
+F 3 "~" H 2400 5275 50  0001 C CNN
+	1    2400 5275
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Isolator:6N138 U?
+U 1 1 628659E4
+P 2875 5375
+AR Path="/628659E4" Ref="U?"  Part="1" 
+AR Path="/62836321/628659E4" Ref="U?"  Part="1" 
+F 0 "U?" H 2875 4908 50  0000 C CNN
+F 1 "6N138" H 2875 4999 50  0000 C CNN
+F 2 "" H 3165 5075 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/HCPL2731-D.pdf" H 3165 5075 50  0001 C CNN
+	1    2875 5375
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N914 D?
+U 1 1 628659EA
+P 2125 5325
+AR Path="/628659EA" Ref="D?"  Part="1" 
+AR Path="/62836321/628659EA" Ref="D?"  Part="1" 
+F 0 "D?" V 2425 5375 50  0000 R CNN
+F 1 "1N914" V 2350 5450 50  0000 R CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 2125 5150 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/85622/1n914.pdf" H 2125 5325 50  0001 C CNN
+	1    2125 5325
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2550 5275 2575 5275
+$Comp
+L Device:R_US R?
+U 1 1 628659F2
+P 3325 5275
+AR Path="/628659F2" Ref="R?"  Part="1" 
+AR Path="/62836321/628659F2" Ref="R?"  Part="1" 
+F 0 "R?" V 3225 5275 50  0000 C CNN
+F 1 "4.7k" V 3425 5275 50  0000 C CNN
+F 2 "" V 3365 5265 50  0001 C CNN
+F 3 "~" H 3325 5275 50  0001 C CNN
+	1    3325 5275
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 628659F8
+P 3475 5275
+AR Path="/628659F8" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/628659F8" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3475 5025 50  0001 C CNN
+F 1 "GND" V 3480 5147 50  0000 R CNN
+F 2 "" H 3475 5275 50  0001 C CNN
+F 3 "" H 3475 5275 50  0001 C CNN
+	1    3475 5275
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 628659FE
+P 3175 5575
+AR Path="/628659FE" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/628659FE" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3175 5325 50  0001 C CNN
+F 1 "GND" V 3180 5447 50  0000 R CNN
+F 2 "" H 3175 5575 50  0001 C CNN
+F 3 "" H 3175 5575 50  0001 C CNN
+	1    3175 5575
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3175 5175 3175 4975
+Wire Wire Line
+	3175 5475 3800 5475
+$Comp
+L Device:R_US R?
+U 1 1 62865A07
+P 3800 5625
+AR Path="/62865A07" Ref="R?"  Part="1" 
+AR Path="/62836321/62865A07" Ref="R?"  Part="1" 
+F 0 "R?" H 3700 5675 50  0000 C CNN
+F 1 "440" H 3675 5575 50  0000 C CNN
+F 2 "" V 3840 5615 50  0001 C CNN
+F 3 "~" H 3800 5625 50  0001 C CNN
+	1    3800 5625
+	-1   0    0    1   
+$EndComp
+Connection ~ 3800 5475
+Wire Wire Line
+	3800 5475 4025 5475
+Wire Wire Line
+	3775 5775 3800 5775
+$Comp
+L Connector:AudioJack3_Ground_SwitchTR J?
+U 1 1 62865A11
+P 1350 5275
+AR Path="/62865A11" Ref="J?"  Part="1" 
+AR Path="/62836321/62865A11" Ref="J15"  Part="1" 
+F 0 "J15" H 950 4600 50  0000 C CNN
+F 1 "TRS_MIDI_TYPE_A" H 1350 4600 50  0000 C CNN
+F 2 "" H 1350 5275 50  0001 C CNN
+F 3 "~" H 1350 5275 50  0001 C CNN
+	1    1350 5275
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62865A17
+P 1550 5175
+AR Path="/62865A17" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/62865A17" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1550 4925 50  0001 C CNN
+F 1 "GND" V 1650 5250 50  0000 R CNN
+F 2 "" H 1550 5175 50  0001 C CNN
+F 3 "" H 1550 5175 50  0001 C CNN
+	1    1550 5175
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 1350 5775
+$Comp
+L Connector:DIN-5_180degree J?
+U 1 1 62865A1E
+P 1300 4700
+AR Path="/62865A1E" Ref="J?"  Part="1" 
+AR Path="/62836321/62865A1E" Ref="J3"  Part="1" 
+F 0 "J3" H 1000 4600 50  0000 C CNN
+F 1 "DIN-5_180" H 925 4525 50  0000 C CNN
+F 2 "" H 1300 4700 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 1300 4700 50  0001 C CNN
+	1    1300 4700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1550 5575 1675 5575
+Wire Wire Line
+	1675 5575 1675 5850
+Wire Wire Line
+	1675 5850 875  5850
+Wire Wire Line
+	875  5850 875  4800
+Wire Wire Line
+	875  4800 1000 4800
+Wire Wire Line
+	1550 5375 1850 5375
+Wire Wire Line
+	1850 5375 1850 4800
+Wire Wire Line
+	1850 4800 1600 4800
+NoConn ~ 1000 4700
+NoConn ~ 1300 5000
+NoConn ~ 1600 4700
+Wire Wire Line
+	1550 5475 2125 5475
+Connection ~ 2125 5475
+Wire Wire Line
+	2125 5475 2575 5475
+Wire Wire Line
+	2250 5275 2225 5275
+Wire Wire Line
+	2225 5275 2225 5175
+Wire Wire Line
+	2225 5175 2125 5175
+Wire Wire Line
+	2025 5175 2025 5275
+Wire Wire Line
+	2025 5275 1550 5275
+Connection ~ 2125 5175
+Wire Wire Line
+	2125 5175 2025 5175
+$Comp
+L Device:R_US R?
+U 1 1 6287EF40
+P 7125 2475
+AR Path="/6287EF40" Ref="R?"  Part="1" 
+AR Path="/62836321/6287EF40" Ref="R?"  Part="1" 
+F 0 "R?" V 7025 2475 50  0000 C CNN
+F 1 "220" V 7225 2475 50  0000 C CNN
+F 2 "" V 7165 2465 50  0001 C CNN
+F 3 "~" H 7125 2475 50  0001 C CNN
+	1    7125 2475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Isolator:6N138 U?
+U 1 1 6287EF46
+P 7600 2575
+AR Path="/6287EF46" Ref="U?"  Part="1" 
+AR Path="/62836321/6287EF46" Ref="U?"  Part="1" 
+F 0 "U?" H 7600 2108 50  0000 C CNN
+F 1 "6N138" H 7600 2199 50  0000 C CNN
+F 2 "" H 7890 2275 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/HCPL2731-D.pdf" H 7890 2275 50  0001 C CNN
+	1    7600 2575
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N914 D?
+U 1 1 6287EF4C
+P 6850 2525
+AR Path="/6287EF4C" Ref="D?"  Part="1" 
+AR Path="/62836321/6287EF4C" Ref="D?"  Part="1" 
+F 0 "D?" V 7150 2575 50  0000 R CNN
+F 1 "1N914" V 7075 2650 50  0000 R CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 6850 2350 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/85622/1n914.pdf" H 6850 2525 50  0001 C CNN
+	1    6850 2525
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7275 2475 7300 2475
+$Comp
+L Device:R_US R?
+U 1 1 6287EF54
+P 8050 2475
+AR Path="/6287EF54" Ref="R?"  Part="1" 
+AR Path="/62836321/6287EF54" Ref="R?"  Part="1" 
+F 0 "R?" V 7950 2475 50  0000 C CNN
+F 1 "4.7k" V 8150 2475 50  0000 C CNN
+F 2 "" V 8090 2465 50  0001 C CNN
+F 3 "~" H 8050 2475 50  0001 C CNN
+	1    8050 2475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6287EF5A
+P 8200 2475
+AR Path="/6287EF5A" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/6287EF5A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8200 2225 50  0001 C CNN
+F 1 "GND" V 8205 2347 50  0000 R CNN
+F 2 "" H 8200 2475 50  0001 C CNN
+F 3 "" H 8200 2475 50  0001 C CNN
+	1    8200 2475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6287EF60
+P 7900 2775
+AR Path="/6287EF60" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/6287EF60" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7900 2525 50  0001 C CNN
+F 1 "GND" V 7905 2647 50  0000 R CNN
+F 2 "" H 7900 2775 50  0001 C CNN
+F 3 "" H 7900 2775 50  0001 C CNN
+	1    7900 2775
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7900 2375 7900 2175
+Wire Wire Line
+	7900 2675 8525 2675
+$Comp
+L Device:R_US R?
+U 1 1 6287EF69
+P 8525 2825
+AR Path="/6287EF69" Ref="R?"  Part="1" 
+AR Path="/62836321/6287EF69" Ref="R?"  Part="1" 
+F 0 "R?" H 8425 2875 50  0000 C CNN
+F 1 "440" H 8400 2775 50  0000 C CNN
+F 2 "" V 8565 2815 50  0001 C CNN
+F 3 "~" H 8525 2825 50  0001 C CNN
+	1    8525 2825
+	-1   0    0    1   
+$EndComp
+Connection ~ 8525 2675
+Wire Wire Line
+	8525 2675 8750 2675
+Wire Wire Line
+	8500 2975 8525 2975
+$Comp
+L Connector:AudioJack3_Ground_SwitchTR J?
+U 1 1 6287EF73
+P 6075 2475
+AR Path="/6287EF73" Ref="J?"  Part="1" 
+AR Path="/62836321/6287EF73" Ref="J16"  Part="1" 
+F 0 "J16" H 5675 1800 50  0000 C CNN
+F 1 "TRS_MIDI_TYPE_A" H 6075 1800 50  0000 C CNN
+F 2 "" H 6075 2475 50  0001 C CNN
+F 3 "~" H 6075 2475 50  0001 C CNN
+	1    6075 2475
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6287EF79
+P 6275 2375
+AR Path="/6287EF79" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/6287EF79" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6275 2125 50  0001 C CNN
+F 1 "GND" V 6375 2450 50  0000 R CNN
+F 2 "" H 6275 2375 50  0001 C CNN
+F 3 "" H 6275 2375 50  0001 C CNN
+	1    6275 2375
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 6075 2975
+$Comp
+L Connector:DIN-5_180degree J?
+U 1 1 6287EF80
+P 6025 1900
+AR Path="/6287EF80" Ref="J?"  Part="1" 
+AR Path="/62836321/6287EF80" Ref="J4"  Part="1" 
+F 0 "J4" H 5725 1800 50  0000 C CNN
+F 1 "DIN-5_180" H 5650 1725 50  0000 C CNN
+F 2 "" H 6025 1900 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 6025 1900 50  0001 C CNN
+	1    6025 1900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6275 2775 6400 2775
+Wire Wire Line
+	6400 2775 6400 3050
+Wire Wire Line
+	6400 3050 5600 3050
+Wire Wire Line
+	5600 3050 5600 2000
+Wire Wire Line
+	5600 2000 5725 2000
+Wire Wire Line
+	6275 2575 6575 2575
+Wire Wire Line
+	6575 2575 6575 2000
+Wire Wire Line
+	6575 2000 6325 2000
+NoConn ~ 5725 1900
+NoConn ~ 6025 2200
+NoConn ~ 6325 1900
+Wire Wire Line
+	6275 2675 6850 2675
+Connection ~ 6850 2675
+Wire Wire Line
+	6850 2675 7300 2675
+Wire Wire Line
+	6975 2475 6950 2475
+Wire Wire Line
+	6950 2475 6950 2375
+Wire Wire Line
+	6950 2375 6850 2375
+Wire Wire Line
+	6750 2375 6750 2475
+Wire Wire Line
+	6750 2475 6275 2475
+Connection ~ 6850 2375
+Wire Wire Line
+	6850 2375 6750 2375
+$Comp
+L Device:R_US R?
+U 1 1 62884524
+P 7050 4750
+AR Path="/62884524" Ref="R?"  Part="1" 
+AR Path="/62836321/62884524" Ref="R?"  Part="1" 
+F 0 "R?" V 6950 4750 50  0000 C CNN
+F 1 "220" V 7150 4750 50  0000 C CNN
+F 2 "" V 7090 4740 50  0001 C CNN
+F 3 "~" H 7050 4750 50  0001 C CNN
+	1    7050 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Isolator:6N138 U?
+U 1 1 6288452A
+P 7525 4850
+AR Path="/6288452A" Ref="U?"  Part="1" 
+AR Path="/62836321/6288452A" Ref="U?"  Part="1" 
+F 0 "U?" H 7525 4383 50  0000 C CNN
+F 1 "6N138" H 7525 4474 50  0000 C CNN
+F 2 "" H 7815 4550 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/HCPL2731-D.pdf" H 7815 4550 50  0001 C CNN
+	1    7525 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N914 D?
+U 1 1 62884530
+P 6775 4800
+AR Path="/62884530" Ref="D?"  Part="1" 
+AR Path="/62836321/62884530" Ref="D?"  Part="1" 
+F 0 "D?" V 7075 4850 50  0000 R CNN
+F 1 "1N914" V 7000 4925 50  0000 R CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 6775 4625 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/85622/1n914.pdf" H 6775 4800 50  0001 C CNN
+	1    6775 4800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7200 4750 7225 4750
+$Comp
+L Device:R_US R?
+U 1 1 62884538
+P 7975 4750
+AR Path="/62884538" Ref="R?"  Part="1" 
+AR Path="/62836321/62884538" Ref="R?"  Part="1" 
+F 0 "R?" V 7875 4750 50  0000 C CNN
+F 1 "4.7k" V 8075 4750 50  0000 C CNN
+F 2 "" V 8015 4740 50  0001 C CNN
+F 3 "~" H 7975 4750 50  0001 C CNN
+	1    7975 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6288453E
+P 8125 4750
+AR Path="/6288453E" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/6288453E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8125 4500 50  0001 C CNN
+F 1 "GND" V 8130 4622 50  0000 R CNN
+F 2 "" H 8125 4750 50  0001 C CNN
+F 3 "" H 8125 4750 50  0001 C CNN
+	1    8125 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62884544
+P 7825 5050
+AR Path="/62884544" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/62884544" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7825 4800 50  0001 C CNN
+F 1 "GND" V 7830 4922 50  0000 R CNN
+F 2 "" H 7825 5050 50  0001 C CNN
+F 3 "" H 7825 5050 50  0001 C CNN
+	1    7825 5050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7825 4650 7825 4450
+Wire Wire Line
+	7825 4950 8450 4950
+$Comp
+L Device:R_US R?
+U 1 1 6288454D
+P 8450 5100
+AR Path="/6288454D" Ref="R?"  Part="1" 
+AR Path="/62836321/6288454D" Ref="R?"  Part="1" 
+F 0 "R?" H 8350 5150 50  0000 C CNN
+F 1 "440" H 8325 5050 50  0000 C CNN
+F 2 "" V 8490 5090 50  0001 C CNN
+F 3 "~" H 8450 5100 50  0001 C CNN
+	1    8450 5100
+	-1   0    0    1   
+$EndComp
+Connection ~ 8450 4950
+Wire Wire Line
+	8450 4950 8675 4950
+Wire Wire Line
+	8425 5250 8450 5250
+$Comp
+L Connector:AudioJack3_Ground_SwitchTR J?
+U 1 1 62884557
+P 6000 4750
+AR Path="/62884557" Ref="J?"  Part="1" 
+AR Path="/62836321/62884557" Ref="J17"  Part="1" 
+F 0 "J17" H 5600 4075 50  0000 C CNN
+F 1 "TRS_MIDI_TYPE_A" H 6000 4075 50  0000 C CNN
+F 2 "" H 6000 4750 50  0001 C CNN
+F 3 "~" H 6000 4750 50  0001 C CNN
+	1    6000 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6288455D
+P 6200 4650
+AR Path="/6288455D" Ref="#PWR?"  Part="1" 
+AR Path="/62836321/6288455D" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6200 4400 50  0001 C CNN
+F 1 "GND" V 6300 4725 50  0000 R CNN
+F 2 "" H 6200 4650 50  0001 C CNN
+F 3 "" H 6200 4650 50  0001 C CNN
+	1    6200 4650
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 6000 5250
+$Comp
+L Connector:DIN-5_180degree J?
+U 1 1 62884564
+P 5950 4175
+AR Path="/62884564" Ref="J?"  Part="1" 
+AR Path="/62836321/62884564" Ref="J5"  Part="1" 
+F 0 "J5" H 5650 4075 50  0000 C CNN
+F 1 "DIN-5_180" H 5575 4000 50  0000 C CNN
+F 2 "" H 5950 4175 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 5950 4175 50  0001 C CNN
+	1    5950 4175
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6200 5050 6325 5050
+Wire Wire Line
+	6325 5050 6325 5325
+Wire Wire Line
+	6325 5325 5525 5325
+Wire Wire Line
+	5525 5325 5525 4275
+Wire Wire Line
+	5525 4275 5650 4275
+Wire Wire Line
+	6200 4850 6500 4850
+Wire Wire Line
+	6500 4850 6500 4275
+Wire Wire Line
+	6500 4275 6250 4275
+NoConn ~ 5650 4175
+NoConn ~ 5950 4475
+NoConn ~ 6250 4175
+Wire Wire Line
+	6200 4950 6775 4950
+Connection ~ 6775 4950
+Wire Wire Line
+	6775 4950 7225 4950
+Wire Wire Line
+	6900 4750 6875 4750
+Wire Wire Line
+	6875 4750 6875 4650
+Wire Wire Line
+	6875 4650 6775 4650
+Wire Wire Line
+	6675 4650 6675 4750
+Wire Wire Line
+	6675 4750 6200 4750
+Connection ~ 6775 4650
+Wire Wire Line
+	6775 4650 6675 4650
+Text HLabel 3125 3050 2    50   Input ~ 0
+VUSB
+Text HLabel 3175 4975 2    50   Input ~ 0
+VUSB
+Text HLabel 7900 2175 2    50   Input ~ 0
+VUSB
+Text HLabel 3975 3550 2    50   Input ~ 0
+DIN_RX_2
+Text HLabel 4025 5475 2    50   Input ~ 0
+DIN_RX_3
+Text HLabel 8750 2675 2    50   Input ~ 0
+DIN_RX_4
+Text HLabel 8675 4950 2    50   Input ~ 0
+DIN_RX_5
+Text HLabel 3725 3850 0    50   Input ~ 0
+3.3V
+Text HLabel 3775 5775 0    50   Input ~ 0
+3.3V
+Text HLabel 8425 5250 0    50   Input ~ 0
+3.3V
+Text HLabel 8500 2975 0    50   Input ~ 0
+3.3V
+$EndSCHEMATC

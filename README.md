@@ -30,10 +30,19 @@ Currently a prototype has been built and then used on a regular basis without is
 
 I use my midiRouter with all of my synthesizers, but I test all of my electrical connections before using them and I keep in mind that musical devices tend to be expensive, and improper wiring or other technical issues associated with home-made hardware can damage them. There is no warranty with this open source system. It may be unwise to risk damaging valuable instruments, especially if they can not be replaced.
 
-This PJRC page provides information on Teensy MIDI capabilities and basic circuits for DIN midi: https://www.pjrc.com/teensy/td_libs_MIDI.html The [/src/midiRouter.ino](./src/midiRouter.ino) file uses both MIDI.h and [USBHost_t36.h](https://github.com/PaulStoffregen/USBHost_t36) to process USB and DIN midi and also have them cross-interact. 
+For anyone wanting to make their own midi router, schematics and images of the prototype are below. Some things to note: 
 
+- The kicad files use the [Teensy libraries from XenGi](https://github.com/XenGi/teensy_library)
+- A cable extension is used to forward the Teensy's main USB to a [USB Type-B Female jack](https://www.adafruit.com/product/4212)
+- Half of a USB cable extension is soldered to the Teensy's host pads to forward the Teensy's host USB to a [USB Type-A Female jack](https://www.adafruit.com/product/4214)
+- DIN midi out is 3.3v, not 5v (no issues reported yet, transistors may be used for 5v instead if necessary)
+- Unless a powered USB hub is used, the USB host port uses the USB client 5v and is limited by its available amperage
 
-For anyone wanting to make their own midi router, an overview of the prototype is below with more to come:
+## Schematics:
+
+![sheet 1](./schematics/midiRouter_schematic_1.jpg)
+![sheet 2](./schematics/midiRouter_schematic_2.jpg)
+![sheet 3](./schematics/midiRouter_schematic_3.jpg)
 
 
 ## Prototype Build:
@@ -45,3 +54,7 @@ For anyone wanting to make their own midi router, an overview of the prototype i
 ![pcb image](./images/pcb.jpg)
 ![pcb rear image](./images/pcb_rear.jpg)
 ![leds](./images/leds.jpg)
+
+
+
+This PJRC page provides additional information on Teensy MIDI capabilities and basic circuits for DIN midi: https://www.pjrc.com/teensy/td_libs_MIDI.html The [/src/midiRouter.ino](./src/midiRouter.ino) file uses both MIDI.h and [USBHost_t36.h](https://github.com/PaulStoffregen/USBHost_t36) to process USB and DIN midi and also have them cross-interact. 
