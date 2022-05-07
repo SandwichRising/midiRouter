@@ -751,4 +751,6 @@ Text HLabel 8425 5250 0    50   Input ~ 0
 3.3V
 Text HLabel 8500 2975 0    50   Input ~ 0
 3.3V
+Text HLabel 7825 4450 2    50   Input ~ 0
+VUSB
 $EndSCHEMATC
