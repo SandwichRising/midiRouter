@@ -18,8 +18,8 @@ To program, install [Arduino IDE](https://www.arduino.cc/en/software) and [Teens
 
 The unit takes approximately 0.05 milliseconds (50us) between receiving the end of a DIN MIDI message to forwarding that message out of all the output DIN ports. This was measured using PulseView, monitoring a logic analyzer connected to the input and 7 of the outputs.
 
-![pulseview response](./images/pulseview_midi_test_view_2.jpg)
-![pulseview response](./images/pulseview_midi_test_view_1.jpg)
+![pulseview response](./images/pulseview_midi_test_view_2.png)
+![pulseview response](./images/pulseview_midi_test_view_1.png)
 
 
 ## Construction Notes
